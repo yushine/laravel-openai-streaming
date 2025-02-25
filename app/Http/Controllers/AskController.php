@@ -12,7 +12,8 @@ class AskController extends Controller
         $question = $request->query('question');
         return response()->stream(function () use ($question) {
             $stream = OpenAI::chat()->createStreamed([
-                'model' => 'gpt-3.5-turbo',
+                //'model' => 'gpt-3.5-turbo',
+                'model' => 'deepseek-ai/DeepSeek-V3',
                 'temperature' => 0.8,
                 'messages' => [
                     [
